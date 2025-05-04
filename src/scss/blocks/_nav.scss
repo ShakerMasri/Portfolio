@@ -1,0 +1,51 @@
+@use '../utils/variables' as *;
+.menu{
+    display: flex;
+    background-color: $primary-color;
+    position: sticky;
+    top: 0;
+    padding: 15px;
+    z-index: 1000;
+   
+    &__items{
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        align-items: center;
+        list-style: none;
+        font-size: 20px;
+      
+      }
+
+    &__item{
+        margin: 5px 0;
+    }
+
+    &__link{
+      display: flex;
+      text-decoration: none;
+      color: #fff;
+      
+        &:hover{
+            text-decoration:overline;
+          }
+        &:active{
+            color: $active-color;
+
+          }
+        &:focus{
+          
+          border:#fff;
+          }   
+    }
+
+    @media (min-width: 320px) and (max-width: 768px){
+
+      padding: 10px;
+      &__items{
+        gap:1rem;
+        font-size: 15px;
+      }
+    }
+   
+}

@@ -1,0 +1,13 @@
+@use '../utils/variables' as *;
+.footer{
+    display: flex;
+    justify-content: center;
+    background-color:  $secondary-color;
+    color: #fff;
+    padding: 20px;
+
+    .footer-txt{
+        font-size: 10px;
+      }
+    
+  }

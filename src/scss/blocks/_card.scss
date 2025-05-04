@@ -1,0 +1,164 @@
+@use '../utils/variables' as *;
+@use '../utils/mixins' as *;
+
+.latest-projects{
+ justify-items: center;
+ display: grid;
+ anchor-name: --moreProjects;
+
+
+    &__title {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    &__container{
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x;
+      scroll-behavior: smooth;
+      gap:1rem;
+      width: 100%;
+      max-width: 1200px;
+      padding: 0.2rem;
+      margin: 0 auto;
+      
+    }
+                
+    &__notice{
+      display: none;
+    }
+
+
+    &__button{
+
+      padding: 15px 100px 15px 100px;
+      margin: 30px;
+      background-color: $secondary-color;
+      color: #fff;
+      text-shadow: 2px 2px 1px $active-color;
+      border-radius: 20px;
+      font-size: larger;
+      flex-shrink: 0 ;
+
+
+  
+      
+  
+        &:hover{
+          cursor: pointer;
+          background:  $hover-color;
+          }
+  
+        &:active{
+      
+          background:  $active-color;
+          
+          }
+        &:focus{
+          background:  $active-color;
+          outline: 2px solid #fff;
+          } 
+      
+  
+  
+            }
+
+
+      .card{
+        width: 200px;
+        height: 350px;
+        border: 5px solid $secondary-color;
+        border-radius: 10px;
+        margin: 0 auto;
+        background-color: $secondary-color;
+        color: #fff;
+        flex-shrink: 0 ;
+
+        
+
+
+        &__content{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+           }
+    
+        &__image{
+            width: 100%;
+            height: 70%;
+            border-radius: 10px;
+        }
+
+        &__title {
+              font-size: 1.5rem;
+              margin: 0.5rem 0;
+              text-shadow: 2px 2px 2px #0b3e57;
+
+            }
+          
+        &__description {
+              font-size: 1rem;
+              
+            }
+
+        &:hover{
+              cursor: pointer;
+              background:  $hover-color;
+              border-color: $hover-color;
+
+            }
+      
+        &:active{
+              background:  $active-color;
+              border-color: $active-color;
+            }
+        &:focus{
+              background:  $active-color;
+              border:#fff;
+            }     
+
+          }
+   @media (min-width: 320px) and (max-width: 768px){ 
+    &__notice{
+      display: block;
+      position: absolute;
+      padding: 5px;
+      font-size: 15px;
+      position-anchor: --moreProjects;
+      bottom: anchor(bottom);
+      left: anchor(left);
+      width:50px;
+      color: #fff;
+      background-color: $secondary-color;
+
+    }
+
+
+
+    &__container{
+      display: flex;
+      flex-direction: row;
+  //grid-template-columns: repeat(1fr);
+      width: 300px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+ 
+
+     }
+     .card{
+      width: 100%;
+      max-width: 300px;
+      height: auto;
+      margin: 0 auto;
+      padding: 1rem;
+      scroll-snap-align: start;
+
+
+  
+    }
+    }
+}
+          

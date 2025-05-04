@@ -1,0 +1,21 @@
+@use '../utils/variables' as *;
+
+.header{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: $primary-color;
+    text-align:center;
+    padding: 5px 10px;
+
+    &__title{
+      color: #fff;
+      text-shadow: 2px 2px 1px $active-color;
+      font-size: 15px;
+    }  
+    
+    @media (min-width: 320px) and (max-width: 768px){
+      &__title{
+
+        font-size: 7px;
+    }
+   
+  }}
